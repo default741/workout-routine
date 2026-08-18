@@ -1,0 +1,138 @@
+{
+  "id": "dad",
+  "label": "Dad",
+  "days": [
+    {
+      "id": "monday",
+      "label": "Monday",
+      "weekday": 1,
+      "sections": [
+        {
+          "id": "warmup",
+          "label": "Warm-up",
+          "exercises": [
+            { "name": "Treadmill (Brisk Walk)", "target": "5 min" },
+            { "name": "Cat-Cow (On a mat)", "target": "1 x 10" },
+            { "name": "Torso Twists", "target": "1 x 10" },
+            { "name": "Elevated Lunge Knee Front and Back", "target": "1 x 10" },
+            { "name": "Calf Raises", "target": "1 x 15" },
+            { "name": "Toe Raises", "target": "1 x 15" }
+          ]
+        },
+        {
+          "id": "workout",
+          "label": "Workout",
+          "exercises": [
+            { "name": "Legs: Chair Squats (Box Squats)", "target": "2 x 10" },
+            { "name": "Chest: Seated Chest Press Machine", "target": "2 x 10" },
+            { "name": "Back: Lat Pulldown Machine", "target": "2 x 10" },
+            { "name": "Shoulders: Machine Shoulder Press", "target": "2 x 10" },
+            { "name": "Arms (Biceps): Dumbbell Hammer Curls", "target": "2 x 10", "notes": "No Pressure on Elbow" },
+            { "name": "Arms (Triceps): Tricep Cable Pushdowns", "target": "2 x 10", "notes": "No Pressure on Elbow" },
+            { "name": "Lower Back: Bird-Dog", "target": "2 x 10" },
+            { "name": "Abs: Seated Knee Tucks", "target": "2 x 10" }
+          ]
+        },
+        {
+          "id": "cooldown",
+          "label": "Cool-down",
+          "exercises": [
+            { "name": "Seated Forward Bend", "target": "30 sec" },
+            { "name": "Butterfly Stretch", "target": "30 sec" },
+            { "name": "Standing Wall Chest Stretch", "target": "30 sec" },
+            { "name": "Child's Pose", "target": "30 sec" },
+            { "name": "Overhead Triceps Stretch", "target": "30 sec" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "label": "Wednesday",
+      "weekday": 3,
+      "sections": [
+        {
+          "id": "warmup",
+          "label": "Warm-up",
+          "exercises": [
+            { "name": "Stationary Cycle", "target": "5 min" },
+            { "name": "High Knees / Marching in Place", "target": "30 sec" },
+            { "name": "Arm Circles (Forward and Back)", "target": "1 x 15, 1 x 15" },
+            { "name": "Dynamic Side Reaches", "target": "1 x 10" },
+            { "name": "Calf Raises", "target": "1 x 15" },
+            { "name": "Toe Raises", "target": "1 x 15" }
+          ]
+        },
+        {
+          "id": "workout",
+          "label": "Workout",
+          "exercises": [
+            { "name": "Legs/Lower Back: Glute Bridges", "target": "2 x 10", "notes": "Toes Out" },
+            { "name": "Chest: Wall Pushups", "target": "2 x 10" },
+            { "name": "Back: Seated Cable Row", "target": "2 x 10" },
+            { "name": "Shoulders: Dumbbell Lateral Raises", "target": "2 x 10", "notes": "Try w/o dumbbells for first set." },
+            { "name": "Arms (Biceps): Cable Bicep Curls", "target": "2 x 10", "notes": "Do with TE brace" },
+            { "name": "Arms (Triceps): Seated Overhead Tricep Extension", "target": "2 x 10" },
+            { "name": "Abs: Modified Forearm Plank", "target": "2 x 10" }
+          ]
+        },
+        {
+          "id": "cooldown",
+          "label": "Cool-down",
+          "exercises": [
+            { "name": "Knee-to-Chest Pose (Lying)", "target": "30 sec" },
+            { "name": "Child's Pose", "target": "30 sec" },
+            { "name": "Seated Spinal Twists", "target": "30 sec" },
+            { "name": "Cross Body Arm Stretch", "target": "30 sec" },
+            { "name": "Forearm Stretch", "target": "30 sec" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "label": "Friday",
+      "weekday": 5,
+      "sections": [
+        {
+          "id": "warmup",
+          "label": "Warm-up",
+          "exercises": [
+            { "name": "Cross-Trainer", "target": "-" },
+            { "name": "Wall Calf Stretches", "target": "1 x 10" },
+            { "name": "Rod Hip Hinge", "target": "2 x 10" },
+            { "name": "Thread the Needle", "target": "1 x 10" },
+            { "name": "Dynamic Chest Cross-overs", "target": "1 x 15" },
+            { "name": "Calf Raises", "target": "1 x 15" },
+            { "name": "Toe Raises", "target": "1 x 15" }
+          ]
+        },
+        {
+          "id": "workout",
+          "label": "Workout",
+          "exercises": [
+            { "name": "Legs: Leg Press", "target": "2 x 10" },
+            { "name": "Legs (Hamstrings): Seated Leg Curl Machine", "target": "2 x 10" },
+            { "name": "Chest: Incline Dumbbell Press", "target": "2 x 10" },
+            { "name": "Back: Assisted Pull-up Machine", "target": "2 x 10" },
+            { "name": "Shoulders: Seated Dumbbell Front Raises", "target": "2 x 10", "notes": "try without dumbbells for first set." },
+            { "name": "Forearms & Core: Farmer's Carry", "target": "2 x 10" },
+            { "name": "Lower Back: Light Dumbbell RDLs", "target": "2 x 10" },
+            { "name": "Abs: Seated Ab Twists", "target": "2 x 10" }
+          ]
+        },
+        {
+          "id": "cooldown",
+          "label": "Cool-down",
+          "exercises": [
+            { "name": "Standing Quadriceps Stretch", "target": "30 sec" },
+            { "name": "Standing Hamstring Stretch", "target": "30 sec", "notes": "toe touch" },
+            { "name": "Child's Pose", "target": "30 sec" },
+            { "name": "Seated Figure-Four Stretch", "target": "30 sec" },
+            { "name": "Standing Wall Chest Stretch", "target": "30 sec" }
+          ]
+        }
+      ]
+    }
+  ]
+}

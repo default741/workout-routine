@@ -16,7 +16,7 @@ export default function ProfileSwitcher({ people, selected, onSelect }: ProfileS
           key={person.id}
           type="button"
           onClick={() => onSelect(person.id)}
-          className={`rounded-full px-4 py-1.5 text-sm font-semibold ${
+          className={`rounded-full px-4 py-2 text-sm font-semibold ${
             selected === person.id ? "bg-white shadow text-neutral-900" : "text-neutral-500"
           }`}
         >

@@ -7,7 +7,7 @@ import type { Day, ExerciseLogs } from "@/types/workout";
 interface DayViewProps {
   day: Day;
   logs: ExerciseLogs;
-  onLogsChange: (logs: ExerciseLogs) => void;
+  onLogsChange: (updater: ExerciseLogs | ((prev: ExerciseLogs) => ExerciseLogs)) => void;
   onFinish?: () => void;
 }
 
@@ -25,11 +25,11 @@ export default function DayView({ day, logs, onLogsChange, onFinish }: DayViewPr
           dayId={day.id}
           section={section}
           logs={logs}
-          onLogChange={(key, log) => onLogsChange({ ...logs, [key]: log })}
+          onLogChange={(key, log) => onLogsChange((prev) => ({ ...prev, [key]: log }))}
         />
       ))}
 
-      <FinishWorkoutButton day={day} logs={logs} onLogsChange={onLogsChange} onFinish={onFinish} />
+      <FinishWorkoutButton day={day} onLogsChange={onLogsChange} onFinish={onFinish} />
     </div>
   );
 }

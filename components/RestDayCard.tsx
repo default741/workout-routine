@@ -20,7 +20,7 @@ export default function RestDayCard({ days, onSelect }: RestDayCardProps) {
             key={day.id}
             type="button"
             onClick={() => onSelect(day.id)}
-            className="rounded-full px-3 py-1.5 text-sm font-medium border border-neutral-300 bg-white text-neutral-700"
+            className="rounded-full px-3 py-2 text-sm font-medium border border-neutral-300 bg-white text-neutral-700"
           >
             {day.label}
           </button>

@@ -27,7 +27,7 @@ export default function DaySelector({
             key={day.id}
             type="button"
             onClick={() => onSelect(day.id)}
-            className={`relative rounded-full px-3 py-1.5 text-sm font-medium border ${
+            className={`relative rounded-full px-3 py-2 text-sm font-medium border ${
               isSelected
                 ? "bg-neutral-900 text-white border-neutral-900"
                 : "bg-white text-neutral-700 border-neutral-300"

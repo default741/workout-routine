@@ -14,12 +14,12 @@ export default function ExerciseItem({ exercise, log, onChange }: ExerciseItemPr
 
   return (
     <li className="py-3">
-      <div className="flex items-start gap-3">
+      <label className="flex items-start gap-3 cursor-pointer">
         <input
           type="checkbox"
           checked={log?.done ?? false}
           onChange={(e) => onChange({ ...log, done: e.target.checked })}
-          className="mt-1 h-5 w-5 shrink-0 accent-emerald-600"
+          className="mt-1 h-6 w-6 shrink-0 accent-emerald-600"
           aria-label={`Mark ${exercise.name} done`}
         />
         <div className="flex-1 min-w-0">
@@ -60,7 +60,7 @@ export default function ExerciseItem({ exercise, log, onChange }: ExerciseItemPr
             )}
           </div>
         </div>
-      </div>
+      </label>
     </li>
   );
 }

@@ -5,21 +5,22 @@ import type { Day, ExerciseLogs } from "@/types/workout";
 
 interface FinishWorkoutButtonProps {
   day: Day;
-  logs: ExerciseLogs;
-  onLogsChange: (logs: ExerciseLogs) => void;
+  onLogsChange: (updater: ExerciseLogs | ((prev: ExerciseLogs) => ExerciseLogs)) => void;
   onFinish?: () => void;
 }
 
-export default function FinishWorkoutButton({ day, logs, onLogsChange, onFinish }: FinishWorkoutButtonProps) {
+export default function FinishWorkoutButton({ day, onLogsChange, onFinish }: FinishWorkoutButtonProps) {
   const handleFinish = () => {
-    const next = { ...logs };
-    day.sections.forEach((section) => {
-      section.exercises.forEach((exercise) => {
-        const key = exerciseKey(day.id, section.id, exercise.name);
-        if (next[key]) next[key] = { ...next[key], done: false };
+    onLogsChange((prev) => {
+      const next = { ...prev };
+      day.sections.forEach((section) => {
+        section.exercises.forEach((exercise) => {
+          const key = exerciseKey(day.id, section.id, exercise.name);
+          if (next[key]) next[key] = { ...next[key], done: false };
+        });
       });
+      return next;
     });
-    onLogsChange(next);
     onFinish?.();
   };
 

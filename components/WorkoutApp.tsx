@@ -12,9 +12,13 @@ import RestDayCard from "./RestDayCard";
 import ExportImportControls from "./ExportImportControls";
 
 export default function WorkoutApp() {
+  // Deliberately not synced across tabs: if two tabs are open on the same
+  // device (one per person), switching profile in one shouldn't yank the
+  // other tab over to a different person's routine mid-workout.
   const [selectedProfile, setSelectedProfile] = useLocalStorage<PersonId>(
     "wt:selectedProfile",
-    "abdemanaaf"
+    "abdemanaaf",
+    { syncAcrossTabs: false }
   );
 
   // Falls back to abdemanaaf if a corrupted/legacy import ever leaves an invalid profile id in storage.

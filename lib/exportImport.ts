@@ -1,10 +1,19 @@
 import { readJSON, writeJSON } from "./storage";
-import type { ExerciseLogs, PersonId } from "@/types/workout";
+import { pruneHistoryRecord } from "./history";
+import {
+  draftKey,
+  historyKey,
+  lastCompletedDayKey,
+  selectedDayKey,
+  SELECTED_PROFILE_KEY,
+} from "./storageKeys";
+import type { ExerciseDraftRecord, ExerciseHistoryRecord, PersonId } from "@/types/workout";
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 interface ExportedProfileState {
-  logs: ExerciseLogs;
+  draft: ExerciseDraftRecord;
+  history: ExerciseHistoryRecord;
   lastCompletedDay: string | null;
   selectedDay: string | null;
 }
@@ -18,9 +27,10 @@ export interface ExportedState {
 
 function readProfileState(profile: PersonId): ExportedProfileState {
   return {
-    logs: readJSON<ExerciseLogs>(`wt:${profile}:logs`, {}),
-    lastCompletedDay: readJSON<string | null>(`wt:${profile}:lastCompletedDay`, null),
-    selectedDay: readJSON<string | null>(`wt:${profile}:selectedDay`, null),
+    draft: readJSON<ExerciseDraftRecord>(draftKey(profile), {}),
+    history: readJSON<ExerciseHistoryRecord>(historyKey(profile), {}),
+    lastCompletedDay: readJSON<string | null>(lastCompletedDayKey(profile), null),
+    selectedDay: readJSON<string | null>(selectedDayKey(profile), null),
   };
 }
 
@@ -28,7 +38,7 @@ export function buildExportData(): ExportedState {
   return {
     schemaVersion: SCHEMA_VERSION,
     exportedAt: new Date().toISOString(),
-    selectedProfile: readJSON<PersonId>("wt:selectedProfile", "abdemanaaf"),
+    selectedProfile: readJSON<PersonId>(SELECTED_PROFILE_KEY, "abdemanaaf"),
     profiles: {
       abdemanaaf: readProfileState("abdemanaaf"),
       dad: readProfileState("dad"),
@@ -54,7 +64,11 @@ export function readImportFile(file: File): Promise<ExportedState> {
       try {
         const parsed = JSON.parse(String(reader.result));
         if (parsed.schemaVersion !== SCHEMA_VERSION || !parsed.profiles) {
-          reject(new Error("This file doesn't look like a workout tracker backup."));
+          reject(
+            typeof parsed.schemaVersion === "number"
+              ? new Error("This backup is from an older version of the app and can't be imported.")
+              : new Error("This file doesn't look like a workout tracker backup.")
+          );
           return;
         }
         if (parsed.selectedProfile !== "abdemanaaf" && parsed.selectedProfile !== "dad") {
@@ -71,11 +85,12 @@ export function readImportFile(file: File): Promise<ExportedState> {
 }
 
 export function applyImportData(data: ExportedState): void {
-  writeJSON("wt:selectedProfile", data.selectedProfile);
+  writeJSON(SELECTED_PROFILE_KEY, data.selectedProfile);
   (Object.keys(data.profiles) as PersonId[]).forEach((profile) => {
     const state = data.profiles[profile];
-    writeJSON(`wt:${profile}:logs`, state.logs);
-    writeJSON(`wt:${profile}:lastCompletedDay`, state.lastCompletedDay);
-    writeJSON(`wt:${profile}:selectedDay`, state.selectedDay);
+    writeJSON(draftKey(profile), state.draft);
+    writeJSON(historyKey(profile), pruneHistoryRecord(state.history));
+    writeJSON(lastCompletedDayKey(profile), state.lastCompletedDay);
+    writeJSON(selectedDayKey(profile), state.selectedDay);
   });
 }

@@ -1,34 +1,15 @@
 "use client";
 
-import { exerciseKey } from "@/lib/slug";
-import type { Day, ExerciseLogs } from "@/types/workout";
-
 interface FinishWorkoutButtonProps {
-  day: Day;
-  onLogsChange: (updater: ExerciseLogs | ((prev: ExerciseLogs) => ExerciseLogs)) => void;
-  onFinish?: () => void;
+  onFinish: () => void;
 }
 
-export default function FinishWorkoutButton({ day, onLogsChange, onFinish }: FinishWorkoutButtonProps) {
-  const handleFinish = () => {
-    onLogsChange((prev) => {
-      const next = { ...prev };
-      day.sections.forEach((section) => {
-        section.exercises.forEach((exercise) => {
-          const key = exerciseKey(day.id, section.id, exercise.name);
-          if (next[key]) next[key] = { ...next[key], done: false };
-        });
-      });
-      return next;
-    });
-    onFinish?.();
-  };
-
+export default function FinishWorkoutButton({ onFinish }: FinishWorkoutButtonProps) {
   return (
     <button
       type="button"
-      onClick={handleFinish}
-      className="w-full rounded-lg bg-emerald-600 py-3 text-sm font-semibold text-white active:bg-emerald-700"
+      onClick={onFinish}
+      className="mt-6 w-full rounded-xl bg-emerald-600 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 active:bg-emerald-800"
     >
       Finish Workout
     </button>

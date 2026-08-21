@@ -2,21 +2,36 @@
 
 import SectionGroup from "./SectionGroup";
 import FinishWorkoutButton from "./FinishWorkoutButton";
-import type { Day, ExerciseLogs } from "@/types/workout";
+import { getDayProgress } from "@/lib/progress";
+import type { Day, ExerciseDraftRecord, ExerciseHistoryRecord } from "@/types/workout";
 
 interface DayViewProps {
   day: Day;
-  logs: ExerciseLogs;
-  onLogsChange: (updater: ExerciseLogs | ((prev: ExerciseLogs) => ExerciseLogs)) => void;
-  onFinish?: () => void;
+  draft: ExerciseDraftRecord;
+  history: ExerciseHistoryRecord;
+  onDraftChange: (updater: ExerciseDraftRecord | ((prev: ExerciseDraftRecord) => ExerciseDraftRecord)) => void;
+  onFinishWorkout: () => void;
 }
 
-export default function DayView({ day, logs, onLogsChange, onFinish }: DayViewProps) {
+export default function DayView({ day, draft, history, onDraftChange, onFinishWorkout }: DayViewProps) {
+  const { completed, total } = getDayProgress(day, draft);
+
   return (
     <div>
-      <div className="mb-4">
-        <h2 className="text-xl font-bold">{day.label}</h2>
+      <div className="mb-5">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-lg font-semibold text-neutral-900">{day.label}</h2>
+          <span className="text-xs font-medium text-neutral-500">
+            {completed}/{total} done
+          </span>
+        </div>
         {day.subtitle && <p className="text-sm text-neutral-500">{day.subtitle}</p>}
+        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
+          <div
+            className="h-full rounded-full bg-emerald-500 transition-all"
+            style={{ width: total > 0 ? `${(completed / total) * 100}%` : "0%" }}
+          />
+        </div>
       </div>
 
       {day.sections.map((section) => (
@@ -24,12 +39,13 @@ export default function DayView({ day, logs, onLogsChange, onFinish }: DayViewPr
           key={section.id}
           dayId={day.id}
           section={section}
-          logs={logs}
-          onLogChange={(key, log) => onLogsChange((prev) => ({ ...prev, [key]: log }))}
+          draft={draft}
+          history={history}
+          onDraftChange={(key, next) => onDraftChange((prev) => ({ ...prev, [key]: next }))}
         />
       ))}
 
-      <FinishWorkoutButton day={day} onLogsChange={onLogsChange} onFinish={onFinish} />
+      <FinishWorkoutButton onFinish={onFinishWorkout} />
     </div>
   );
 }

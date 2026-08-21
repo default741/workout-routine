@@ -27,11 +27,23 @@ export interface Person {
   days: Day[];
 }
 
-export interface ExerciseLog {
+export interface SetEntry {
   weight?: string;
   reps?: string;
   duration?: string;
-  done?: boolean;
 }
 
-export type ExerciseLogs = Record<string, ExerciseLog>;
+// In-progress, not-yet-archived state for one exercise.
+export interface ExerciseDraft {
+  done?: boolean; // whole-exercise checkbox, independent of individual sets
+  sets: SetEntry[]; // always at least 1 row; index-aligned with display order
+}
+export type ExerciseDraftRecord = Record<string, ExerciseDraft>;
+
+// One archived past session for one exercise.
+export interface ExerciseHistoryEntry {
+  date: string; // new Date().toISOString()
+  sets: SetEntry[]; // only the non-empty sets that existed at commit time
+}
+// Newest-first per key, so "last time" is always history[key][0].
+export type ExerciseHistoryRecord = Record<string, ExerciseHistoryEntry[]>;

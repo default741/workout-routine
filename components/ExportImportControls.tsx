@@ -28,16 +28,20 @@ export default function ExportImportControls({ onImported }: ExportImportControl
   };
 
   return (
-    <div className="flex gap-3 text-xs">
-      <button type="button" onClick={downloadExport} className="underline text-neutral-500">
-        Export backup
+    <div className="flex gap-2 text-xs">
+      <button
+        type="button"
+        onClick={downloadExport}
+        className="rounded-md border border-neutral-200 px-2.5 py-1.5 font-medium text-neutral-600 hover:bg-neutral-50"
+      >
+        Export
       </button>
       <button
         type="button"
         onClick={() => fileInputRef.current?.click()}
-        className="underline text-neutral-500"
+        className="rounded-md border border-neutral-200 px-2.5 py-1.5 font-medium text-neutral-600 hover:bg-neutral-50"
       >
-        Import backup
+        Import
       </button>
       <input
         ref={fileInputRef}

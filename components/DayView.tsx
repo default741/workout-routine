@@ -2,6 +2,7 @@
 
 import SectionGroup from "./SectionGroup";
 import WorkoutTimer from "./WorkoutTimer";
+import FinishWorkoutButton from "./FinishWorkoutButton";
 import { getDayProgress } from "@/lib/progress";
 import type { Day, ExerciseDraftRecord, ExerciseHistoryRecord } from "@/types/workout";
 
@@ -48,6 +49,13 @@ export default function DayView({
         </div>
       </div>
 
+      <WorkoutTimer
+        isActive={isSessionActive}
+        elapsedMs={elapsedMs}
+        finishedDurationMs={finishedDurationMs}
+        onStart={onStartWorkout}
+      />
+
       {day.sections.map((section) => (
         <SectionGroup
           key={section.id}
@@ -59,13 +67,7 @@ export default function DayView({
         />
       ))}
 
-      <WorkoutTimer
-        isActive={isSessionActive}
-        elapsedMs={elapsedMs}
-        finishedDurationMs={finishedDurationMs}
-        onStart={onStartWorkout}
-        onFinish={onFinishWorkout}
-      />
+      <FinishWorkoutButton onFinish={onFinishWorkout} />
     </div>
   );
 }

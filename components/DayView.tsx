@@ -1,7 +1,7 @@
 "use client";
 
 import SectionGroup from "./SectionGroup";
-import FinishWorkoutButton from "./FinishWorkoutButton";
+import WorkoutTimer from "./WorkoutTimer";
 import { getDayProgress } from "@/lib/progress";
 import type { Day, ExerciseDraftRecord, ExerciseHistoryRecord } from "@/types/workout";
 
@@ -10,10 +10,24 @@ interface DayViewProps {
   draft: ExerciseDraftRecord;
   history: ExerciseHistoryRecord;
   onDraftChange: (updater: ExerciseDraftRecord | ((prev: ExerciseDraftRecord) => ExerciseDraftRecord)) => void;
+  isSessionActive: boolean;
+  elapsedMs: number | null;
+  finishedDurationMs: number | null;
+  onStartWorkout: () => void;
   onFinishWorkout: () => void;
 }
 
-export default function DayView({ day, draft, history, onDraftChange, onFinishWorkout }: DayViewProps) {
+export default function DayView({
+  day,
+  draft,
+  history,
+  onDraftChange,
+  isSessionActive,
+  elapsedMs,
+  finishedDurationMs,
+  onStartWorkout,
+  onFinishWorkout,
+}: DayViewProps) {
   const { completed, total } = getDayProgress(day, draft);
 
   return (
@@ -45,7 +59,13 @@ export default function DayView({ day, draft, history, onDraftChange, onFinishWo
         />
       ))}
 
-      <FinishWorkoutButton onFinish={onFinishWorkout} />
+      <WorkoutTimer
+        isActive={isSessionActive}
+        elapsedMs={elapsedMs}
+        finishedDurationMs={finishedDurationMs}
+        onStart={onStartWorkout}
+        onFinish={onFinishWorkout}
+      />
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function ExportImportControls({ onImported }: ExportImportControl
 
     try {
       const data = await readImportFile(file);
-      if (!window.confirm("Import this backup? It will overwrite your current logged data.")) {
+      if (!window.confirm("Import this CSV backup? It will overwrite your current logged data.")) {
         return;
       }
       applyImportData(data);
@@ -46,7 +46,7 @@ export default function ExportImportControls({ onImported }: ExportImportControl
       <input
         ref={fileInputRef}
         type="file"
-        accept="application/json"
+        accept="text/csv,.csv"
         onChange={handleImportFile}
         className="hidden"
       />

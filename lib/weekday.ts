@@ -1,9 +1,13 @@
-const WEEKDAY_TO_DAY_ID: Record<number, string> = {
-  1: "monday",
-  3: "wednesday",
-  5: "friday",
-};
+import type { Day } from "@/types/workout";
 
-export function getTodayDayId(date: Date = new Date()): string | null {
-  return WEEKDAY_TO_DAY_ID[date.getDay()] ?? null;
+export function buildWeekdayMap(days: Day[]): Record<number, string> {
+  const map: Record<number, string> = {};
+  for (const day of days) {
+    if (typeof day.weekday === "number") map[day.weekday] = day.id;
+  }
+  return map;
+}
+
+export function getTodayDayId(days: Day[], date: Date = new Date()): string | null {
+  return buildWeekdayMap(days)[date.getDay()] ?? null;
 }

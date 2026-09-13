@@ -17,3 +17,15 @@ export function lastCompletedDayKey(profile: PersonId): string {
 export function selectedDayKey(profile: PersonId): string {
   return `wt:${profile}:selectedDay`;
 }
+
+export function activeSessionKey(profile: PersonId): string {
+  return `wt:${profile}:activeSession`;
+}
+
+export function sessionHistoryKey(profile: PersonId): string {
+  return `wt:${profile}:sessionHistory`;
+}
+
+export function bodyMetricsKey(profile: PersonId): string {
+  return `wt:${profile}:bodyMetrics`;
+}

@@ -1,12 +1,12 @@
 {
   "id": "abdemanaaf",
   "label": "Abdemanaaf",
-  "rotation": ["push1", "pull1", "legs1", "push2", "pull2", "legs2"],
   "days": [
     {
       "id": "push1",
       "label": "Push 1",
       "subtitle": "Chest, Shoulders, Triceps",
+      "weekday": 1,
       "sections": [
         {
           "id": "warmup",
@@ -15,7 +15,7 @@
             { "name": "Treadmill (Brisk Walk/Jog)", "target": "5 min" },
             { "name": "Torso Twists", "target": "1 x 15" },
             { "name": "Dynamic Chest Cross-overs", "target": "1 x 15" },
-            { "name": "Arm Circles", "target": "2 x 15" },
+            { "name": "Arm Circles (f/b)", "target": "1 x 15" },
             { "name": "Dynamic Overhead Arm Swings", "target": "1 x 15" }
           ]
         },
@@ -23,27 +23,28 @@
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
-            { "name": "Flat Dumbbell Press", "target": "3 x 12" },
-            { "name": "Cable Crossovers (Mid-pulley)", "target": "3 x 12" },
-            { "name": "Seated Dumbbell Shoulder Press", "target": "3 x 12" },
+            { "name": "Standard Push-ups", "target": "3 x 15" },
+            { "name": "Barbell Flat Bench Press", "target": "4 x 10" },
+            { "name": "Cable Crossovers (Mid)", "target": "3 x 12" },
             { "name": "Dumbbell Lateral Raises", "target": "3 x 12" },
-            { "name": "Tricep Rope Pushdowns", "target": "3 x 12" }
+            { "name": "Rear Delt Fly", "target": "3 x 12" },
+            { "name": "Tricep Rope Pushdowns", "target": "3 x 12" },
+            { "name": "Skull Crushers", "target": "3 x 12" }
           ]
         },
         {
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "Standard Crunches", "target": "2 x 20" },
-            { "name": "Reverse Crunches", "target": "2 x 20" },
-            { "name": "Bicycle Crunches", "target": "2 x 20" }
+            { "name": "Standard Crunches", "target": "3 x 15" },
+            { "name": "Reverse Crunches", "target": "3 x 15" },
+            { "name": "Bicycle Crunches", "target": "3 x 15" }
           ]
         },
         {
           "id": "cooldown",
           "label": "Cool-down",
           "exercises": [
-            { "name": "Cobra Pose", "target": "30 sec" },
             { "name": "Standing Wall Chest Stretch", "target": "30 sec" },
             { "name": "Cross-Body Shoulder Stretch", "target": "30 sec" },
             { "name": "Overhead Triceps Stretch", "target": "30 sec" },
@@ -56,26 +57,29 @@
       "id": "pull1",
       "label": "Pull 1",
       "subtitle": "Back, Biceps, Forearms, Lower Back",
+      "weekday": 2,
       "sections": [
         {
           "id": "warmup",
           "label": "Warm-up",
           "exercises": [
             { "name": "Stationary Cycle", "target": "5 min" },
-            { "name": "Cat-Cow (On a mat)", "target": "1 x 10" },
-            { "name": "Dynamic Side Reaches", "target": "1 x 10" },
+            { "name": "Cat-Cow (On a mat)", "target": "1 x 15" },
+            { "name": "Dynamic Side Reaches", "target": "1 x 15" },
             { "name": "Dynamic Arm Swings", "target": "1 x 15" },
-            { "name": "Wrist Rotations", "target": "2 x 15" }
+            { "name": "Wrist Rotations (f/b)", "target": "1 x 15" }
           ]
         },
         {
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
-            { "name": "Lat Pulldown Machine", "target": "3 x 12" },
-            { "name": "Barbell Bent-Over Rows", "target": "3 x 12" },
+            { "name": "Pull-ups / Assisted Pull-ups (Wide Grip)", "target": "3 x 15" },
+            { "name": "Lat Pulldown Machine", "target": "4 x 10" },
+            { "name": "Seated Cable Rows", "target": "3 x 12" },
             { "name": "Back Hyperextensions", "target": "3 x 12" },
             { "name": "Barbell Bicep Curls", "target": "3 x 12" },
+            { "name": "Incline Dumbbell Curls", "target": "3 x 12" },
             { "name": "Dumbbell Wrist Curls", "target": "3 x 12" }
           ]
         },
@@ -83,9 +87,9 @@
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "Cable Crunches", "target": "2 x 20" },
-            { "name": "Hanging Knee Raises", "target": "2 x 20" },
-            { "name": "Russian Twists", "target": "2 x 20" }
+            { "name": "Cable Crunches", "target": "3 x 15" },
+            { "name": "Hanging Knee Raises", "target": "3 x 15" },
+            { "name": "Cable Woodchoppers", "target": "3 x 15" }
           ]
         },
         {
@@ -95,7 +99,7 @@
             { "name": "Seated Hamstring Stretch", "target": "30 sec" },
             { "name": "Hanging Lat Stretch", "target": "30 sec" },
             { "name": "Hands-Behind-Back Stretch", "target": "30 sec" },
-            { "name": "Forearm Wall Stretch", "target": "2 x 30 sec" },
+            { "name": "Forearm Wall Stretch", "target": "30 sec" },
             { "name": "Treadmill (Brisk Walk/Jog)", "target": "5 min" }
           ]
         }
@@ -105,6 +109,7 @@
       "id": "legs1",
       "label": "Legs 1",
       "subtitle": "Quads Focus & Calves",
+      "weekday": 3,
       "sections": [
         {
           "id": "warmup",
@@ -112,19 +117,20 @@
           "exercises": [
             { "name": "Cross-Trainer", "target": "5 min" },
             { "name": "Bodyweight Squats", "target": "1 x 15" },
-            { "name": "Standing Leg Swings (f/b)", "target": "4 x 10" },
-            { "name": "High Knees / Marching", "target": "1 x 20" },
-            { "name": "Wall Calf Stretches", "target": "1 x 10" }
+            { "name": "Standing Leg Swings (f/b)", "target": "1 x 15" },
+            { "name": "High Knees / Marching", "target": "1 x 15" },
+            { "name": "Wall Calf Stretches", "target": "1 x 15" }
           ]
         },
         {
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
-            { "name": "Barbell Back Squats", "target": "3 x 12" },
-            { "name": "Incline Leg Press", "target": "3 x 12" },
+            { "name": "Wall Sits", "target": "3 x 15" },
+            { "name": "Barbell Back Squats", "target": "4 x 10" },
+            { "name": "Incline Leg Press", "target": "4 x 10" },
             { "name": "Seated Leg Curl Machine", "target": "3 x 12" },
-            { "name": "Glute Bridges", "target": "3 x 12" },
+            { "name": "Dumbbell Romanian Deadlifts", "target": "3 x 12" },
             { "name": "Standing Machine Calf Raises", "target": "3 x 12" }
           ]
         },
@@ -132,9 +138,9 @@
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "V-Ups", "target": "2 x 20" },
-            { "name": "Flutter Kicks", "target": "2 x 20" },
-            { "name": "Side Planks", "target": "2 x 20" }
+            { "name": "V-Ups", "target": "3 x 15" },
+            { "name": "Flutter Kicks", "target": "3 x 15" },
+            { "name": "Side Planks", "target": "3 x 15" }
           ]
         },
         {
@@ -154,6 +160,7 @@
       "id": "push2",
       "label": "Push 2",
       "subtitle": "Upper Chest, Shoulders, Triceps",
+      "weekday": 4,
       "sections": [
         {
           "id": "warmup",
@@ -170,27 +177,28 @@
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
+            { "name": "Pike Push-ups", "target": "3 x 15" },
+            { "name": "Barbell Overhead Press", "target": "4 x 10" },
+            { "name": "Cable Front Raises", "target": "3 x 12" },
             { "name": "Incline Dumbbell Press", "target": "3 x 12" },
             { "name": "Pec Deck Machine (Flyes)", "target": "3 x 12" },
-            { "name": "Arnold Press (Dumbbells)", "target": "3 x 12" },
-            { "name": "Cable Front Raises", "target": "3 x 12" },
-            { "name": "Seated Overhead Tricep Ext.", "target": "3 x 12" }
+            { "name": "Assisted Triceps Dips", "target": "3 x 12" },
+            { "name": "Dumbbell Triceps Kickbacks", "target": "3 x 12" }
           ]
         },
         {
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "Toe Touches", "target": "2 x 20" },
-            { "name": "Scissor Kicks", "target": "2 x 20" },
-            { "name": "Heel Touches (Penguins)", "target": "2 x 20" }
+            { "name": "Toe Touches", "target": "3 x 15" },
+            { "name": "Scissor Kicks", "target": "3 x 15" },
+            { "name": "Heel Touches (Penguins)", "target": "3 x 15" }
           ]
         },
         {
           "id": "cooldown",
           "label": "Cool-down",
           "exercises": [
-            { "name": "Cobra Pose", "target": "30 sec" },
             { "name": "Standing Wall Chest Stretch", "target": "30 sec" },
             { "name": "Cross-Body Shoulder Stretch", "target": "30 sec" },
             { "name": "Overhead Triceps Stretch", "target": "30 sec" },
@@ -203,26 +211,29 @@
       "id": "pull2",
       "label": "Pull 2",
       "subtitle": "Back Thickness, Forearms, Biceps",
+      "weekday": 5,
       "sections": [
         {
           "id": "warmup",
           "label": "Warm-up",
           "exercises": [
             { "name": "Stationary Cycle", "target": "5 min" },
-            { "name": "Cat-Cow (On a mat)", "target": "1 x 10" },
-            { "name": "Dynamic Side Reaches", "target": "1 x 10" },
+            { "name": "Cat-Cow (On a mat)", "target": "1 x 15" },
+            { "name": "Dynamic Side Reaches", "target": "1 x 15" },
             { "name": "Dynamic Arm Swings", "target": "1 x 15" },
-            { "name": "Wrist Rotations", "target": "2 x 15" }
+            { "name": "Wrist Rotations (f/b)", "target": "1 x 15" }
           ]
         },
         {
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
-            { "name": "Assisted Pull-up Machine", "target": "3 x 12" },
-            { "name": "Seated Cable Rows", "target": "3 x 12" },
-            { "name": "Dumbbell Romanian Deadlifts", "target": "3 x 12" },
+            { "name": "Chin-ups / Assisted Chin-ups (Close Grip)", "target": "3 x 15" },
+            { "name": "Barbell Bent-Over Rows", "target": "4 x 10" },
+            { "name": "Rope Face Pulls", "target": "3 x 12" },
+            { "name": "Weighted Glute Bridges", "target": "3 x 12" },
             { "name": "Dumbbell Hammer Curls", "target": "3 x 12" },
+            { "name": "Preacher Curls", "target": "3 x 12" },
             { "name": "Farmer's Carry", "target": "3 x 12" }
           ]
         },
@@ -230,9 +241,9 @@
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "Sprinter Sit-ups", "target": "2 x 20" },
-            { "name": "Mountain Climbers", "target": "2 x 20" },
-            { "name": "Cable Woodchoppers", "target": "2 x 20" }
+            { "name": "Sprinter Sit-ups", "target": "3 x 15" },
+            { "name": "Mountain Climbers", "target": "3 x 15" },
+            { "name": "Russian Twists", "target": "3 x 15" }
           ]
         },
         {
@@ -242,7 +253,7 @@
             { "name": "Child's Pose", "target": "30 sec" },
             { "name": "Hanging Lat Stretch", "target": "30 sec" },
             { "name": "Hands-Behind-Back Stretch", "target": "30 sec" },
-            { "name": "Forearm Wall Stretch", "target": "2 x 30 sec" },
+            { "name": "Forearm Wall Stretch", "target": "30 sec" },
             { "name": "Treadmill (Brisk Walk/Jog)", "target": "5 min" }
           ]
         }
@@ -252,6 +263,7 @@
       "id": "legs2",
       "label": "Legs 2",
       "subtitle": "Hamstrings Focus & Glutes",
+      "weekday": 6,
       "sections": [
         {
           "id": "warmup",
@@ -259,19 +271,20 @@
           "exercises": [
             { "name": "Cross-Trainer", "target": "5 min" },
             { "name": "Bodyweight Squats", "target": "1 x 15" },
-            { "name": "Standing Leg Swings (f/b)", "target": "4 x 10" },
-            { "name": "High Knees / Marching", "target": "1 x 20" },
-            { "name": "Wall Calf Stretches", "target": "1 x 10" }
+            { "name": "Standing Leg Swings (f/b)", "target": "1 x 15" },
+            { "name": "High Knees / Marching", "target": "1 x 15" },
+            { "name": "Wall Calf Stretches", "target": "1 x 15" }
           ]
         },
         {
           "id": "main",
           "label": "Main Lifts",
           "exercises": [
-            { "name": "Trap Bar or Barbell Deadlift", "target": "3 x 12" },
-            { "name": "Dumbbell Walking Lunges", "target": "3 x 12" },
+            { "name": "Curtsy Lunges", "target": "3 x 15" },
+            { "name": "Trap Bar or Barbell Deadlift", "target": "4 x 10" },
+            { "name": "Leg Extension Machine", "target": "3 x 12" },
             { "name": "Seated Leg Curl Machine", "target": "3 x 12" },
-            { "name": "Glute Bridges", "target": "3 x 12" },
+            { "name": "Hip Thrusts", "target": "3 x 12" },
             { "name": "Seated Machine Calf Raises", "target": "3 x 12" }
           ]
         },
@@ -279,9 +292,9 @@
           "id": "core",
           "label": "Core",
           "exercises": [
-            { "name": "Overhead Reach Crunches", "target": "2 x 20" },
-            { "name": "Seated Knee Tucks", "target": "2 x 20" },
-            { "name": "Spiderman Planks", "target": "2 x 20" }
+            { "name": "Overhead Reach Crunches", "target": "3 x 15" },
+            { "name": "Seated Knee Tucks", "target": "3 x 15" },
+            { "name": "Lying Windshield Wiper with Bent Knees", "target": "3 x 15" }
           ]
         },
         {
